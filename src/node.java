@@ -8,4 +8,8 @@ public class node {
 	public void backward(){
 	}
 
+	public void deleteNode(){
+		
+	}
+
 }
