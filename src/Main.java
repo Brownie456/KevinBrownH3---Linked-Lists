@@ -22,8 +22,16 @@ public class Main {
 		test.add("Zed");
 		test.display();
 		test.add("Alpaca");
-
-
+		System.out.println("");
+		System.out.println("");
 		test.display();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		test.forwardTrav();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		test.backTrav();
 	}
 }

@@ -1,12 +1,4 @@
-/**
- * Created by Kevin on 3/14/2017.
- * • Insert a node in the list in alphabetical order
- • Find a node that matches a String
- • Traverse the list forwards and print
- • Traverse the list backwards and print
- • Delete a node from the list
- • Delete/destroy the list
- */
+
 public class DoublyLinked {
 
     private Node head;
@@ -20,42 +12,57 @@ public class DoublyLinked {
         size = 0;
     }
 
-    public int size(){
-        return size;
-    }
-
-    public boolean isEmpty(){
-        return head == null;
-    }
-
-
+//Add method, adds data in alphabetical order
     public void add(String data) {
         Node newNode = new Node(data, null, null);
-        Node prev = null;
-        Node dummy = head;
-        Node next = tail;
-        size++;
-
-
-        while (dummy != null && data.compareTo(dummy.getData()) <= 0) {
-            prev = dummy;
-            dummy = dummy.getNext();
-            System.out.println("aligator");
-        }
-        if (prev == null) {
+        Node temp, holder;
+        boolean state = false;
+//if the list is empty put item into the list
+        if (head == null) {
             head = newNode;
-        }else{
-           tail = newNode;
-            }
-System.out.println(newNode);
-
+        }
+        //if the data is higher alphabetically, put it in front
+        else if (data.compareTo(head.getData()) <= 0) {
+            newNode.setNext(head);
+            head.setPrev(newNode);
+            head = newNode;
+        } else {
+            temp = head;
+            holder = head.getNext();
+            //if the data is lower alphabetically do this
+            while (holder != null) {
+                //if data is lower than previous and higher than next put data in here
+                if (data.compareTo(temp.getData()) >= 0 && data.compareTo(holder.getData()) <= 0) {
+                    temp.setNext(newNode);
+                    newNode.setPrev(temp);
+                    newNode.setNext(holder);
+                    holder.setPrev(newNode);
+                    state = true;
+                    break;
                 }
+                //if data has reached end of the list then put data here
+                else if (holder.getNext() == null) {
+                    holder.setNext(newNode);
+                    break;
+                }
+                //iterates through the list
+                else {
+                    temp = holder;
+                    holder = holder.getNext();
+                }
+            }
+        }
+            System.out.println(newNode);
+            size++;
+        }
+
+
 
 
     public void findNode(){
 
     }
-
+//Traverse the list forward and print
     public void forwardTrav() {
         Node temp = head;
         while (temp != null) {
@@ -64,6 +71,11 @@ System.out.println(newNode);
         }
     }
     public void backTrav(){
+        Node temp = tail;
+        while (temp != null) {
+            System.out.println(temp.getData());
+            temp = temp.getPrev();
+        }
 
     }
 
@@ -77,7 +89,7 @@ System.out.println(newNode);
 
     public void display()
     {
-        System.out.print("Doubly Linked List = ");
+        System.out.print("Alphabetically sorted: ");
         if (size == 0)
         {
             System.out.print("empty\n");
@@ -89,14 +101,14 @@ System.out.println(newNode);
             return;
         }
         Node ptr = head;
-        System.out.print(head.getData()+ " <-> ");
+        System.out.print(head.getData()+ " , ");
         ptr = head.getNext();
         while (ptr.getNext() != null)
         {
-            System.out.print(ptr.getData()+ " <-> ");
+            System.out.print(ptr.getData()+ " , ");
             ptr = ptr.getNext();
         }
-        System.out.print(ptr.getData()+ "\n");
+        System.out.println(ptr.getData());
     }
 }
 
