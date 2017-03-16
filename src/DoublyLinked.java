@@ -1,8 +1,10 @@
+import java.util.Scanner;
 
 public class DoublyLinked {
 
     private static Node head;
-    private Node tail;
+    private static Node tail;
+    private static Node current;
     private int size;
 
 
@@ -57,23 +59,51 @@ public class DoublyLinked {
         size++;
         }
 
-
-
-
-    public static Node sToNode(String find) {
+    /*public static Node sToNode(String find) {
         Node temp = head;
         Node holder = temp.getNext();
-            while (holder != null) {
-                if (find.compareTo(temp.getData()) == 0) {
-                    return temp;
-                } else {
-                    temp = holder;
-                    holder = holder.getNext();
+        int x = 1;
+        do {
+            try {
+                while (temp != null) {
+                    if (find.compareTo(temp.getData()) == 0) {
+                        x=2;
+                        return temp;
+                    } else {
+                        temp = holder;
+                        holder = holder.getNext();
+                    }
                 }
+            } catch (Exception e) {
+                System.out.println("That node is not on the list");
             }
-            return null;
         }
+        while(x==1);
+    }*/
+    public static Node sToNode(String find) {
+        Scanner keyboard = new Scanner(System.in);
+        Node temp = head;
+        Node holder = temp.getNext();
+        String next;
+        int x = 1;
 
+            try {
+                while (temp != null) {
+                    if (find.compareTo(temp.getData()) == 0) {
+                        x=2;
+                        return temp;
+                    } else {
+                        temp = holder;
+                        holder = holder.getNext();
+                    }
+                }
+                return null;
+            } catch (Exception e) {
+                System.out.println("That node is not on the list");
+                next = keyboard.nextLine();
+            }
+            return sToNode(next);
+        }
 
 
 
@@ -86,47 +116,52 @@ public class DoublyLinked {
             temp = temp.getNext();
         }
     }
+
     //iterate the list backwards and print
-    public void backTrav(){
+    public void backTrav() {
         Node temp = tail;
         System.out.print("Iterate backward <-> ");
         while (temp != null) {
-            System.out.print(temp.getData()+ " <-> ");
+            System.out.print(temp.getData() + " <-> ");
             temp = temp.getPrev();
         }
-
     }
-
+//delete node method
     public void deleteNode(Node data) {
+        Node teller = data;
         Node temp = head;
+        Node last = tail;
         Node next = temp.getNext();
+        //if the list has only 1 node then delete it
         if (this.size == 1) {
             this.head = null;
             this.tail = null;
             this.size--;
-            System.out.println("1");
             System.out.println("deleted node:"+data);
             return;
         }
-            if (data.getPrev() == null){
-                head = head.getNext();
+        //if the node you want to delete is head node then delete it
+            if (this.head.equals(data)){
+                this.head = this.head.getNext();
+                this.head.setPrev(null);
                 size--;
-                System.out.println("2");
                 System.out.println("deleted node:"+data);
                 return;
             }
-            if (data.getNext() == null){
-                tail = tail.getPrev();
+            //if the node you want to delete is tail then delete it
+            //if (last.getNext() == null){
+        if (this.tail.equals(data)){
+            this.tail = this.tail.getPrev();
+                this.tail.setNext(null);
                 size--;
-                System.out.println("3");
                 System.out.println("deleted node:"+data);
                 return;
             }
+            //Rest of cases
             while (next != null){
-            if (data.getData().compareTo(temp.getData()) == 0) {
+                if (data.getData().equals(temp.getData())) {
                 temp.getPrev().setNext(temp.getNext());
                 temp.getNext().setPrev(temp.getPrev());
-                System.out.println("4");
                 System.out.println("deleted node:"+data);
                 size--;
                 return;
@@ -162,6 +197,11 @@ public class DoublyLinked {
         System.out.println("Does not match any node");
         return;
     }
+
+   /* public String nextGuess(String guess){
+        guess = keyboard.nextLine();
+        return guess;
+    }*/
 
 }
 

@@ -1,9 +1,11 @@
-
+import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
 		// TODO Auto-generated method stub
 		DoublyLinked test = new DoublyLinked();
+
 
 		test.add("Kevin");
 		test.add("Cheetos");
@@ -32,7 +34,7 @@ public class Main {
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-		test.deleteNode(DoublyLinked.sToNode("asfd"));
+		test.deleteNode(DoublyLinked.sToNode(input.nextLine()));
 		System.out.println("");
 		System.out.println("");
 		test.backTrav();
