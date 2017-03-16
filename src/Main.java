@@ -40,5 +40,13 @@ Scanner input = new Scanner(System.in);
 		test.backTrav();
 		System.out.println("");
 		test.forwardTrav();
+		test.deleteList();
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		test.forwardTrav();
+		test.backTrav();
+
+
 	}
 }

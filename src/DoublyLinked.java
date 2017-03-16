@@ -4,7 +4,6 @@ public class DoublyLinked {
 
     private static Node head;
     private static Node tail;
-    private static Node current;
     private int size;
 
 
@@ -59,27 +58,7 @@ public class DoublyLinked {
         size++;
         }
 
-    /*public static Node sToNode(String find) {
-        Node temp = head;
-        Node holder = temp.getNext();
-        int x = 1;
-        do {
-            try {
-                while (temp != null) {
-                    if (find.compareTo(temp.getData()) == 0) {
-                        x=2;
-                        return temp;
-                    } else {
-                        temp = holder;
-                        holder = holder.getNext();
-                    }
-                }
-            } catch (Exception e) {
-                System.out.println("That node is not on the list");
-            }
-        }
-        while(x==1);
-    }*/
+    //Return a node from an input string, if node is not on the list ask for another node
     public static Node sToNode(String find) {
         Scanner keyboard = new Scanner(System.in);
         Node temp = head;
@@ -111,6 +90,9 @@ public class DoublyLinked {
     public void forwardTrav() {
         Node temp = head;
         System.out.print("Iterate Forward <-> ");
+        if (temp == null){
+            System.out.println("The list is empty!");
+        }
         while (temp != null) {
             System.out.print(temp.getData()+ " <-> ");
             temp = temp.getNext();
@@ -176,12 +158,21 @@ public class DoublyLinked {
     }
 
 
-
-    public void deleteList(){
+    public static void deleteList(){
+        Node temp = head;
+        while(temp != null) {
+                this.head = temp.getNext();
+                temp.setPrev(null);
+                size--;
+            }
+        {
+            System.out.println("List is empty");
+        }
+        System.out.println("List is empty");
 
     }
 
-
+//Check to see if a node is on the list
     public void findNode(String find) {
         Node temp = head;
         Node holder = temp.getNext();
@@ -198,10 +189,6 @@ public class DoublyLinked {
         return;
     }
 
-   /* public String nextGuess(String guess){
-        guess = keyboard.nextLine();
-        return guess;
-    }*/
 
 }
 
