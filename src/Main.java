@@ -40,7 +40,7 @@ Scanner input = new Scanner(System.in);
 		test.backTrav();
 		System.out.println("");
 		test.forwardTrav();
-		test.deleteList();
+		DoublyLinked.deleteList(test);
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");

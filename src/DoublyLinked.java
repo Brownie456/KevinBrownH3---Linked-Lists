@@ -158,12 +158,12 @@ public class DoublyLinked {
     }
 
 
-    public static void deleteList(){
+    public static void deleteList(DoublyLinked any){
         Node temp = head;
         while(temp != null) {
-                this.head = temp.getNext();
+                any.head.getNext();
                 temp.setPrev(null);
-                size--;
+                any.size--;
             }
         {
             System.out.println("List is empty");
