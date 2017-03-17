@@ -64,12 +64,12 @@ public class DoublyLinked {
         Node temp = head;
         Node holder = temp.getNext();
         String next;
-        int x = 1;
+
 
             try {
                 while (temp != null) {
                     if (find.compareTo(temp.getData()) == 0) {
-                        x=2;
+
                         return temp;
                     } else {
                         temp = holder;
@@ -91,7 +91,7 @@ public class DoublyLinked {
         Node temp = head;
         System.out.print("Iterate Forward <-> ");
         if (temp == null){
-            System.out.println("The list is empty!");
+
         }
         while (temp != null) {
             System.out.print(temp.getData()+ " <-> ");
@@ -158,12 +158,22 @@ public class DoublyLinked {
     }
 
 
-    public static void deleteList(DoublyLinked any){
-        Node temp = head;
-        while(temp != null) {
-                any.head.getNext();
-                temp.setPrev(null);
-                any.size--;
+    public  void deleteList(DoublyLinked any){
+        Node temp = any.head;
+        if(any.size ==0){
+            System.out.println("This list is empty");
+            return;
+        }
+
+        while(any.head.getNext() != null) {
+            any.head = any.head.getNext();
+            any.head.setPrev(null);
+            any.size--;
+            if (size ==1){
+                any.head = null;
+                any.tail = null;
+                return;
+            }
             }
         {
             System.out.println("List is empty");
