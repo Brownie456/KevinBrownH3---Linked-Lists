@@ -16,10 +16,10 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
+            <state relative-caret-position="1173">
               <caret line="69" column="8" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -28,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DoublyLinked.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DoublyLinked.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DoublyLinked.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="61" column="44" lean-forward="false" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+            <state relative-caret-position="382">
+              <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding>
                 <element signature="method#DoublyLinked#0;class#DoublyLinked#0" expanded="false" />
                 <element signature="method#add#0;class#DoublyLinked#0" expanded="false" />
@@ -85,8 +85,8 @@
         <option value="$PROJECT_DIR$/src/nodeList.java" />
         <option value="$PROJECT_DIR$/src/node.java" />
         <option value="$PROJECT_DIR$/src/Node.java" />
-        <option value="$PROJECT_DIR$/src/DoublyLinked.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/DoublyLinked.java" />
       </list>
     </option>
   </component>
@@ -427,7 +427,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -640,23 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DoublyLinked.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="61" column="44" lean-forward="false" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-          <folding>
-            <element signature="method#DoublyLinked#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#add#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#sToNode#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#forwardTrav#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#backTrav#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#deleteNode#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#deleteList#0;class#DoublyLinked#0" expanded="false" />
-            <element signature="method#findNode#0;class#DoublyLinked#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -672,10 +655,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
+        <state relative-caret-position="1173">
           <caret line="69" column="8" lean-forward="true" selection-start-line="69" selection-start-column="8" selection-end-line="69" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DoublyLinked.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <element signature="method#DoublyLinked#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#add#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#sToNode#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#forwardTrav#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#backTrav#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#deleteNode#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#deleteList#0;class#DoublyLinked#0" expanded="false" />
+            <element signature="method#findNode#0;class#DoublyLinked#0" expanded="false" />
           </folding>
         </state>
       </provider>

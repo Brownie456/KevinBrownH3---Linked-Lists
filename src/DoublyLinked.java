@@ -130,7 +130,7 @@ public class DoublyLinked {
             if (this.head.equals(data)){
                 this.head = this.head.getNext();
                 this.head.setPrev(null);
-                size--;
+                this.size--;
                 System.out.println("deleted node:"+data);
                 return;
             }
@@ -138,7 +138,7 @@ public class DoublyLinked {
         if (this.tail.equals(data)){
             this.tail = this.tail.getPrev();
                 this.tail.setNext(null);
-                size--;
+                this.size--;
                 System.out.println("deleted node:"+data);
                 return;
             }
@@ -148,7 +148,7 @@ public class DoublyLinked {
                 temp.getPrev().setNext(temp.getNext());
                 temp.getNext().setPrev(temp.getPrev());
                 System.out.println("deleted node:"+data);
-                size--;
+                this.size--;
                 return;
             }
             else {
