@@ -6,23 +6,23 @@ public class DoublyLinked {
     private static Node tail;
     private int size;
 
-//default constructor
+    //default constructor
     public DoublyLinked(){
         head = null;
         tail = null;
         size = 0;
     }
 
-//Add method, adds data in alphabetical order
+    //Add method, adds data in alphabetical order
     public void add(String data) {
         Node newNode = new Node(data, null, null);
         Node temp, holder;
-//if the list is empty put item into the list
+        //if the list is empty put item into the list
         if (head == null) {
             head = newNode;
             tail = head;
         }
-        //if the data is higher alphabetically, put it in front
+        //if the data is higher alphabetically than the head, put it in front
         else if (data.compareTo(head.getData()) <= 0) {
             newNode.setNext(head);
             head.setPrev(newNode);
@@ -58,38 +58,37 @@ public class DoublyLinked {
         size++;
         }
 
-    //Return a node from an input string, if node is not on the list ask for another node
+    //Turn a string into a node, if node is not on the list ask for another input
     public static Node sToNode(String find) {
         Scanner keyboard = new Scanner(System.in);
         Node temp = head;
         Node holder = temp.getNext();
         String next;
 
-
             try {
                 while (temp != null) {
-                    if (find.compareTo(temp.getData()) == 0) {
-
+                    if (find.toUpperCase().compareTo(temp.getData()) == 0) {
                         return temp;
                     } else {
                         temp = holder;
                         holder = holder.getNext();
                     }
                 }
+                //If user inputs a value not on the list then catch the error and prompt them again
                 return null;
             } catch (Exception e) {
-                System.out.println("That node is not on the list");
+                System.out.println("That node is not on the list, try again:");
                 next = keyboard.nextLine();
             }
-            return sToNode(next);
+            return sToNode(next.toUpperCase());
         }
 
-//Traverse the list forward and print
+    //Traverse the list forward and print
     public void forwardTrav() {
         Node temp = head;
         System.out.print("Iterate Forward <-> ");
         if (temp == null){
-
+        System.out.print("List is empty");
         }
         while (temp != null) {
             System.out.print(temp.getData()+ " <-> ");
@@ -101,6 +100,9 @@ public class DoublyLinked {
     public void backTrav() {
         Node temp = tail;
         System.out.print("Iterate backward <-> ");
+        if (temp == null){
+            System.out.print("List is empty");
+        }
         while (temp != null) {
             System.out.print(temp.getData() + " <-> ");
             temp = temp.getPrev();
@@ -109,10 +111,13 @@ public class DoublyLinked {
 
     //delete node method
     public void deleteNode(Node data) {
-        Node teller = data;
         Node temp = head;
-        Node last = tail;
         Node next = temp.getNext();
+        //if the list is empty then tell them
+        if(this.size == 0){
+            System.out.println("the list is empty");
+            return;
+        }
         //if the list has only 1 node then delete it
         if (this.size == 1) {
             this.head = null;
@@ -130,7 +135,6 @@ public class DoublyLinked {
                 return;
             }
             //if the node you want to delete is tail then delete it
-            //if (last.getNext() == null){
         if (this.tail.equals(data)){
             this.tail = this.tail.getPrev();
                 this.tail.setNext(null);
@@ -157,29 +161,36 @@ public class DoublyLinked {
     }
 
     //Delete the entire linked list
-    public  void deleteList(DoublyLinked any){
+    public  static void deleteList(DoublyLinked any){
         //if the list is already empty then tell them
         if(any.size ==0){
             System.out.println("This list is empty");
             return;
         }
-        //deletes the entire list
+        //if the list only has 1 element then delete it
+        if (any.size ==1){
+            any.head=null;
+            any.tail=null;
+            any.size--;
+            System.out.println("The list has been nuked!");
+            return;
+        }
+        //deletes the entire list if it has more than 1 element
         while(any.head.getNext() != null) {
             any.head = any.head.getNext();
             any.head.setPrev(null);
             any.size--;
-            if (size ==1){
+            if (any.size ==1){
                 any.head = null;
                 any.tail = null;
+                any.size--;
+                System.out.println("The list has been nuked!");
                 return;
             }
-            }
-        {
-            System.out.println("List is empty");
         }
     }
 
-//Check to see if a node is on the list
+    //Check to see if a node is on the list
     public void findNode(String find) {
         Node temp = head;
         Node holder = temp.getNext();
@@ -194,6 +205,11 @@ public class DoublyLinked {
         }
         System.out.println("Does not match any node");
         return;
+    }
+
+    //Method to return size of list
+    public int getSize(){
+        return size;
     }
 
 }

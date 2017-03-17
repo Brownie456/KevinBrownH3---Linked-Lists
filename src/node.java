@@ -1,14 +1,14 @@
 public class Node {
     private String data;
     private Node next, prev;
-/*Constructor method */
+    /*Constructor method */
     public Node(){
         data = "";
         next = null;
         prev = null;
 
     }
-/*  Constructor with parameters*/
+    /*  Constructor with parameters*/
     public Node(String data,Node next, Node prev) {
 
         this.data = data;
