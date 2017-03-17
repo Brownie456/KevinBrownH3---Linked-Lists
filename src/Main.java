@@ -2,13 +2,13 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.print("This program adds first names into a list alphabetically.\n");
+		System.out.print("This program adds first names into a list alphabetically.");
 		Scanner input = new Scanner(System.in);
 		Scanner text = new Scanner(System.in);
 		DoublyLinked test = new DoublyLinked();
 		int choice = 0;
 		while (choice != 7) {
-			System.out.println("\nType\n" + "1 to add to list\n" + "2 to delete from list\n"
+			System.out.println("\nType a number 1-7 :\n" + "1 to add to list\n" + "2 to delete from list\n"
 					+ "3 to traverse list forward\n" + "4 to traverse list backwards\n" + "5 to nuke the list\n" +
 					"6 to find a node on the list\n" + "7 to stop the program");
 			choice = input.nextInt();
