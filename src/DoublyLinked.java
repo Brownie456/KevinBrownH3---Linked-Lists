@@ -6,7 +6,7 @@ public class DoublyLinked {
     private static Node tail;
     private int size;
 
-
+//default constructor
     public DoublyLinked(){
         head = null;
         tail = null;
@@ -84,8 +84,6 @@ public class DoublyLinked {
             return sToNode(next);
         }
 
-
-
 //Traverse the list forward and print
     public void forwardTrav() {
         Node temp = head;
@@ -108,7 +106,8 @@ public class DoublyLinked {
             temp = temp.getPrev();
         }
     }
-//delete node method
+
+    //delete node method
     public void deleteNode(Node data) {
         Node teller = data;
         Node temp = head;
@@ -157,14 +156,14 @@ public class DoublyLinked {
             return;
     }
 
-
+    //Delete the entire linked list
     public  void deleteList(DoublyLinked any){
-        Node temp = any.head;
+        //if the list is already empty then tell them
         if(any.size ==0){
             System.out.println("This list is empty");
             return;
         }
-
+        //deletes the entire list
         while(any.head.getNext() != null) {
             any.head = any.head.getNext();
             any.head.setPrev(null);
@@ -178,8 +177,6 @@ public class DoublyLinked {
         {
             System.out.println("List is empty");
         }
-        System.out.println("List is empty");
-
     }
 
 //Check to see if a node is on the list
@@ -198,7 +195,6 @@ public class DoublyLinked {
         System.out.println("Does not match any node");
         return;
     }
-
 
 }
 
